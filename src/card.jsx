@@ -4,6 +4,7 @@ import Reset from './reset-button'
 import Counter from './counter'
 import ButtonContainer from './button-container'
 import { useEffect, useState } from 'react'
+import CountButton from './count-button'
 
 
 export default function Card() {
@@ -31,7 +32,10 @@ export default function Card() {
             <Title locked={locked} />
             <Counter count={count} />
             <Reset reset={setCount} />
-            <ButtonContainer buttons={setCount} locked={locked} />
+            <ButtonContainer>
+                <CountButton type="minus" countButton={setCount} locked={locked }/>
+                <CountButton type="plus" countButton={setCount } locked ={locked}/>
+            </ButtonContainer>
         </div>
     )
 }
